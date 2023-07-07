@@ -1,0 +1,248 @@
+* {
+    text-transform: capitalize;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.color {
+    background-color: #f5f5f5;
+}
+
+/*start-nav*/
+nav,
+header {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+nav :is(.nav-link, .navbar-brand),
+.nav-link:focus,
+.nav-link:hover {
+    color: white !important;
+}
+
+.navbar-nav .nav-item>a:not(.nav-link.dropdown-toggle)::after {
+    content: " ";
+    background-color: white;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    transition: 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-item:first-child a::after {
+    width: 100% !important;
+}
+
+.navbar-nav .nav-item>a:not(.nav-link.dropdown-toggle):hover::after {
+
+    width: 100%;
+}
+
+/*end-nav*/
+/*start-home*/
+.home {
+    height: 100dvh;
+}
+
+body :is(.counter, .home, .portofolio .slider, .contact-us) {
+
+    background-image: url(../imgs/hero-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+header p {
+    padding: 10px;
+}
+
+header p::before {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: white;
+}
+
+header p::after {
+    content: "";
+    animation: 1.5s ease-in-out 0s infinite alternate forwards typing;
+    font-size: 3rem;
+    display: block;
+    height: 73px;
+    text-transform: capitalize;
+}
+
+@keyframes typing {
+    0% {
+        content: " ";
+    }
+
+    10% {
+        content: "f";
+    }
+
+    20% {
+        content: "fr";
+    }
+
+    30% {
+        content: "fre";
+    }
+
+    40% {
+        content: "free";
+    }
+
+    50% {
+        content: "freel";
+    }
+
+    60% {
+        content: "freela";
+    }
+
+    70% {
+        content: "freelan";
+    }
+
+    80% {
+        content: "freelanc";
+    }
+
+    90% {
+        content: "freelance";
+    }
+
+    100% {
+        content: "freelancer";
+    }
+}
+
+/*end-home*/
+
+/*start-about*/
+.prog {
+    text-transform: uppercase;
+
+}
+
+body :is(.about-me .row .col-md-6:nth-child(2), .contact-us) h4 {
+    width: fit-content;
+}
+
+body :is(.about-me .row .col-md-6:nth-child(2), .contact-us) h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 75%;
+    background-color: #0078ff;
+    height: 4px;
+}
+
+/*end-about*/
+/*start-services*/
+.title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 50px;
+    height: 4px;
+    background-color: #0078ff;
+    transform: translateX(-50%);
+}
+
+.services .item i {
+    transition: 0.2s ease-in-out;
+    font-size: 45px;
+    border-width: 10px !important;
+    box-shadow: 0 0 0 10px #0078ff;
+}
+
+.services .item:hover i {
+    color: white;
+    background-color: #0078ff;
+    box-shadow: 0 0 0 10px #cde1f8;
+
+}
+
+.services .item:hover i {
+    color: white
+}
+
+.count-item i {
+    box-shadow: 0 0 0 10px #cde1f8;
+    color: #cde1f8;
+}
+
+/*end-services*/
+/*portofolio*/
+.portofolio .cont-img img {
+    transition: transform 0.2s ease-in-out;
+}
+
+.portofolio .card:hover img {
+    transform: scale(1.2, 1.2);
+}
+
+body :is(.counter, .portofolio .slider, .contact-us) {
+    background-image: url(../imgs/overlay-bg.jpg);
+
+}
+
+/*portofolio*/
+/*us-body*/
+.us-body i {
+    width: 20px;
+}
+
+/*us-body*/
+/*blog*/
+.card-info img {
+    width: 40px;
+}
+
+/*blog*/
+/*footer*/
+.anmi i{
+    
+    display: block;
+    transform-origin: center;
+    margin: 3px;
+}
+
+@keyframes gear {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*footer*/
+/*target*/
+body:has(#home:target) .navbar-nav>li:first-child a::after,
+body:has(#about-me:target) .navbar-nav>li:nth-child(2) a::after,
+body:has(.services:target) .navbar-nav>li:nth-child(3) a::after,
+body:has(.portofolio:target) .navbar-nav>li:nth-child(4) a::after,
+body:has(.blog:target) .navbar-nav>li:nth-child(5) a::after,
+body:has(#contact:target) .navbar-nav>li:nth-child(7) a::after {
+    width: 100%;
+}
+
+body:has(section:target:not(#home)) .navbar-nav>li:first-child a::after {
+    width: 0 !important;
+}
+
+/*target*/
